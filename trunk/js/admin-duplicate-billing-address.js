@@ -2,38 +2,57 @@
 * Name : 	admin-duplicate-billing-address.js
 * Author : 	Andrew Schultz
 * Purpose : Copy Woocommerce billing address to customer address in the wordpress dashboard
+* Version : 1.1
+* History : v1.1 - Added support for country and state dropdowns
 */
 
-var $j = jQuery;
-
-$j(document).ready(function(){
+jQuery(document).ready( function($) {
 	//set initial state of checkbox to unchecked
-	$j('#duplicate-billing-address').removeAttr('checked');
+	$('#duplicate-billing-address').removeAttr('checked');
 	
-	$j( "#duplicate-billing-address" ).change(function() {
-		if($j(this).is(":checked")) {
+	$( "#duplicate-billing-address" ).change(function() {
+		if($(this).is(":checked")) {
 			//if checked then copy all values
-            $j("#shipping_first_name").val($j('#billing_first_name').val());
-			$j("#shipping_last_name").val($j('#billing_last_name').val());
-			$j("#shipping_company").val($j('#billing_company').val());
-			$j("#shipping_address_1").val($j('#billing_address_1').val());
-			$j("#shipping_address_2").val($j('#billing_address_2').val());
-			$j("#shipping_city").val($j('#billing_city').val());
-			$j("#shipping_postcode").val($j('#billing_postcode').val());
-			$j("#shipping_state").val($j('#billing_state').val());
-			$j("#shipping_country").val($j('#billing_country').val());
+            $("#shipping_first_name").val($('#billing_first_name').val());
+			$("#shipping_last_name").val($('#billing_last_name').val());
+			$("#shipping_company").val($('#billing_company').val());
+			$("#shipping_address_1").val($('#billing_address_1').val());
+			$("#shipping_address_2").val($('#billing_address_2').val());
+			$("#shipping_city").val($('#billing_city').val());
+			$("#shipping_postcode").val($('#billing_postcode').val());
+			$("#shipping_state").val($('#billing_state').val());
+			$("#shipping_country").val($('#billing_country').val());
+			
+			//WooCommerce 2.3?? introduced predictive dropdown selectors
+			if( $('#s2id_shipping_country').length ) {  
+				//Shipping Country predictive dropdown
+				$('#select2-chosen-2').text($('#select2-chosen-1').text());
+			}
+			if( $('#s2id_shipping_state').length ) {  
+				//Shipping State predictive dropdown
+				$('#select2-chosen-4').text($('#select2-chosen-3').text());
+			}
         }
 		else {
 			//Clear values when unchecked
-			$j("#shipping_first_name").val('');
-			$j("#shipping_last_name").val('');
-			$j("#shipping_company").val('');
-			$j("#shipping_address_1").val('');
-			$j("#shipping_address_2").val('');
-			$j("#shipping_city").val('');
-			$j("#shipping_postcode").val('');
-			$j("#shipping_state").val('');
-			$j("#shipping_country").val('');
+			$("#shipping_first_name").val('');
+			$("#shipping_last_name").val('');
+			$("#shipping_company").val('');
+			$("#shipping_address_1").val('');
+			$("#shipping_address_2").val('');
+			$("#shipping_city").val('');
+			$("#shipping_postcode").val('');
+			$("#shipping_state").val('');
+			$("#shipping_country").val('');
+			
+			if( $('#s2id_shipping_country').length ) {  
+				//Shipping Country predictive dropdown
+				$('#select2-chosen-2').text('');
+			}
+			if( $('#s2id_shipping_state').length ) {  
+				//Shipping State predictive dropdown
+				$('#select2-chosen-4').text('');
+			}
 		}
 	});
 });
