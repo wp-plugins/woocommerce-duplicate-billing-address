@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Duplicate Billing Address
 Plugin URI: http://eversionsystems.com
 Description: Adds a checkbox in the edit user profile dashboard page to duplicate the billing to shipping address in WooCommerce
-Version: 1.11
+Version: 1.12
 Author: Andrew Schultz
 Author URI: http://eversionsystems.com
 Compatibility : up to WordPress 4.2.2
