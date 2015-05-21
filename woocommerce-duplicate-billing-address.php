@@ -12,6 +12,9 @@ License: GPL2
    
 define('ES_DUPLICATE_PLUGIN_URL', plugin_dir_url( __FILE__ ));
 
+if ( ! function_exists( 'is_plugin_active' ) )
+	include_once(ABSPATH.'wp-admin/includes/plugin.php');	//required for checking active plugin
+
 //Only load plugin if WooCommerce is active
 if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
 	//Display duplicate billing to shipping address
