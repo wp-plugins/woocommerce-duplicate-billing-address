@@ -4,7 +4,7 @@ Donate link: http://eversionsystems.com
 Tags: woocommerce,billing,shipping,address,copy,duplicate
 Requires at least: 3.0.1
 Tested up to: 4.2.2
-Stable tag: 1.1
+Stable tag: 1.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,3 +35,6 @@ None
 
 = 1.1 =
 * Added support for the new predictive text combobox for country and state selection
+
+= 1.11 =
+* Added a check to only display duplicate combobox is WooCommerce plugin is active
