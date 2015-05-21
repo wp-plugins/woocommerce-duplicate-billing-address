@@ -8,7 +8,7 @@ Stable tag: 1.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Add a checkbox to the user profile edit screen in the dashboard to enable the duplicating of the WooCommerce billing address to shipping address.
+Adds a checkbox to the user profile edit screen in the dashboard to enable the duplicating of the WooCommerce billing address to shipping address.
 
 == Description ==
 
